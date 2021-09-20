@@ -1,13 +1,15 @@
 import DisplayData from "./components/DisplayData";
 import Fetchdata from "./components/Fetchdata";
-
+import { useState } from "react";
 
 
 function App() {
+  const [data, setData] = useState({})
+
   return (
     <>
-      <Fetchdata />;
-      <DisplayData />;
+      <Fetchdata setData={setData} />;
+      <DisplayData data={data} />;
     </>
   );
 }

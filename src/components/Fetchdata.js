@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-const Fetchdata = () => {
+const Fetchdata = ({setData}) => {
     
   const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?country=US";
 
@@ -10,7 +10,7 @@ const Fetchdata = () => {
       .get(baseUrl)
       .then((response) =>
         //Do something with the data
-        console.log(response.data)
+        setData(response.data)
       )
       .catch((error) => console.error(`${error}`));
   }, []);
