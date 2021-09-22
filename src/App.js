@@ -1,4 +1,4 @@
-import DisplayData from "./components/DisplayData";
+import DisplayItems from "./components/DisplayItems";
 import Fetchdata from "./components/Fetchdata";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Fetchdata setData={setData} />;
-      <DisplayData data={data} />;
+      <DisplayItems data={data} />;
     </>
   );
 }

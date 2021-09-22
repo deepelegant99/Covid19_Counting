@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const Fetchdata = ({setData}) => {
     
-  const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?country=US";
+  const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases";
 
   useEffect(() => {
     axios
