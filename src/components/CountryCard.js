@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 });
 
 const CountryCard = ({ country }) => {
+  
   const classes = useStyles();
 
   return (
