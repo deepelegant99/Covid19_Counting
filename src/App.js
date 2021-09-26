@@ -9,7 +9,8 @@ function App() {
   return (
     <>
       <Fetchdata setData={setData} />;
-      <DisplayItems data={data} />;
+      {/* <DisplayItems data={data} />; */}
+      
     </>
   );
 }
