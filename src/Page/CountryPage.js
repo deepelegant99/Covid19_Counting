@@ -1,6 +1,8 @@
-const CountryPage = () => {
+import DisplayItem from '../components/DisplayItems'
 
-    return(<h1>Country</h1>)
+const CountryPage = ({data}) => {
+
+    return <DisplayItem data={data} />;
 
 
 }
