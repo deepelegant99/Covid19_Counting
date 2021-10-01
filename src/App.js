@@ -26,10 +26,10 @@ function App() {
             <CountryPage data={data} />
           </Route>
           <Route path="/ContinentPage">
-            <ContinentPage />
+            <ContinentPage data={data}/>
           </Route>
           <Route path="/LocationPage">
-            <LocationPage />
+            <LocationPage data={data}/>
           </Route>
           <Route path="/GenericCountry">
             <GenericCountry />

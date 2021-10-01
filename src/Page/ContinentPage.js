@@ -1,7 +1,12 @@
-const ContinentPage = () => {
+import DisplayItem from '../components/DisplayItems'
 
-return(<h1>Continent</h1>)
-    
+const ContinentPage = ({data}) => {
+
+    console.log(data['']);
+
+return(
+        <DisplayItem data={data} />
+        )
 
 }
 

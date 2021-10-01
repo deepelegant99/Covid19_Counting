@@ -1,6 +1,8 @@
-const LocationPage = () => {
+import DisplayItem from '../components/DisplayItems';
 
-    return(<h1>Location</h1>)
+const LocationPage = ({data}) => {
+
+    return(<DisplayItem data={data}/>)
 
 }
 
