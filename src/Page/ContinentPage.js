@@ -7,7 +7,7 @@ const ContinentPage = ({data}) => {
 
     const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?continent=Europe";
 
-    const testData={};
+    /*const testData={};
 
     useEffect(() => {
       axios
@@ -17,15 +17,28 @@ const ContinentPage = ({data}) => {
           testData
         )
         .catch((error) => console.error(`${error}`));
-    }, []);
+    }, []);*/
   
 
 
-    console.log(testData);
+    //console.log(data['North America']);
+
+    //const result = Object.keys(data).filter(country => country['All']['continent'] === 'Asia');
+    
+    const result = Object.keys(data).filter(function(countryName) {
+
+        return data[countryName]["All"]["continent"] === "Asia";
+    })
+  
+    console.log(result);
 
 return(
         <DisplayItem data={data} />
         )
+
+
+
+
 
 }
 
