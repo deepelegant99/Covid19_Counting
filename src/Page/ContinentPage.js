@@ -1,15 +1,14 @@
 import DisplayItem from '../components/DisplayItems';
 import axios from "axios";
 import { useEffect } from "react";
+import { useState } from "react";
 
 
 const ContinentPage = ({data}) => {
 
-    const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?continent=Europe";
+   const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?country=";
 
-    /*const testData={};
-
-    useEffect(() => {
+   /* useEffect(() => {
       axios
         .get(baseUrl)
         .then((response) =>
@@ -20,24 +19,26 @@ const ContinentPage = ({data}) => {
     }, []);*/
   
 
-
-    //console.log(data['North America']);
-
-    //const result = Object.keys(data).filter(country => country['All']['continent'] === 'Asia');
-    
-    const result = Object.keys(data).filter(function(countryName) {
+    const asianCountries = Object.keys(data).filter(function(countryName) {
 
         return data[countryName]["All"]["continent"] === "Asia";
-    })
+      })
   
-    console.log(result);
 
+   /* This Works*/   
+   
+    const newList = asianCountries.map((asianCountries) => data[asianCountries]['All'])
+
+    console.log(newList[0]['deaths'] + newList[1]['deaths']);
+
+    
 return(
-        <DisplayItem data={data} />
+      
+      <DisplayItem data={data} />
+    
         )
 
-
-
+        
 
 
 }
