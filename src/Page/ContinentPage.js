@@ -29,13 +29,13 @@ const ContinentPage = ({data}) => {
    
     const newList = asianCountries.map((asianCountries) => data[asianCountries]['All'])
 
-    console.log(newList[0]['deaths'] + newList[1]['deaths']);
+    console.log(newList[0]['deaths']+newList[1]['deaths']);
 
     
 return(
       
       <DisplayItem data={data} />
-    
+  
         )
 
         
