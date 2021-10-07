@@ -38,8 +38,24 @@ const ContinentPage = ({data}) => {
       return continentResult=continentResult+newList[countryDeaths]['deaths'];
     })
 
+    let asiaConfirmed=0;
 
-    console.log(continentResult);
+    const asiaResult2 = Object.keys(newList).map(function(countryConfirmed){
+
+      return asiaConfirmed=asiaConfirmed+newList[countryConfirmed]['confirmed'];
+    })
+
+    let asiaLife_expectancy = 0;
+
+    const asiaResult3 = Object.keys(newList).map(function(countrylife){
+
+      return asiaLife_expectancy=asiaLife_expectancy+parseFloat(newList[countrylife]['life_expectancy']);
+    })
+
+
+
+
+    console.log(asiaLife_expectancy/41);
     
 
     
