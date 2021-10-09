@@ -1,58 +1,35 @@
-import DisplayItem from '../components/DisplayItems';
+import DisplayItem from "../components/DisplayItems";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
+const ContinentPage = ({ data }) => {
+  const asianCountries = Object.keys(data).filter(function (countryName) {
+    return data[countryName]["All"]["continent"] === "Asia";
+  });
 
-const ContinentPage = ({data}) => {
+  /* This Works*/
 
-   const baseUrl = "https://covid-api.mmediagroup.fr/v1/cases?country=";
+  const asianDeaths = asianCountries.map(
+    (country) => data[country]["All"]["deaths"]
+  );
 
-   /* useEffect(() => {
-      axios
-        .get(baseUrl)
-        .then((response) =>
-          //Do something with the data
-          testData
-        )
-        .catch((error) => console.error(`${error}`));
-    }, []);*/
-  
-
-    const asianCountries = Object.keys(data).filter(function(countryName) {
-
-        return data[countryName]["All"]["continent"] === "Asia";
-      })
-  
-
-   /* This Works*/   
-   
-    const newList = asianCountries.map((asianCountries) => data[asianCountries]['All'])
-
-    //console.log(newList[0]['deaths']+newList[1]['deaths']);
-
-    let continentResult=0;
-
-    const continentDeaths = Object.keys(newList).map(function(countryDeaths){
-
-      return continentResult=continentResult+newList[countryDeaths]['deaths'];
-    })
+  const reducer = (accumulator, curr) => accumulator + curr;
+  console.log(asianDeaths.reduce(reducer));
 
 
-    console.log(continentResult);
-    
+  //console.log(newList[0]['deaths']+newList[1]['deaths']);
 
-    
-return(
-      
-      <DisplayItem data={data} />
-  
-        )
+  let continentResult = 0;
 
-        
+  // const continentDeaths = Object.keys(newList).map(function (countryDeaths) {
+  //   return (continentResult =
+  //     continentResult + newList[countryDeaths]["deaths"]);
+  // });
 
+  // console.log(continentResult);
 
-}
-
+  return <DisplayItem data={data} />;
+};
 
 export default ContinentPage;
