@@ -7,6 +7,7 @@ import GenericCountry from "./Page/GenericCountry";
 import LocationPage from "./Page/LocationPage";
 import MainPage from "./Page/MainPage";
 import Header from './components/Header'
+import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
