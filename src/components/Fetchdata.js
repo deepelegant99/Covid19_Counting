@@ -15,7 +15,7 @@ const Fetchdata = ({setData}) => {
       .catch((error) => console.error(`${error}`));
   }, []);
 
-  return <h1>testing fetch data</h1>;
+  return <></>;
 };
 
 export default Fetchdata;
