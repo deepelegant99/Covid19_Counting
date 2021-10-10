@@ -158,34 +158,30 @@ console.log("Deaths: "+saDeathCount+" "+
 
 
 /////////////**************Australia****************************** */
-const australiaCountries = Object.keys(data).filter(function(countryName) {
+const oceaniaCountries = Object.keys(data).filter(function(countryName) {
 
-  return data[countryName]["All"]["continent"] === "Australia";
+  return data[countryName]["All"]["continent"] === "Oceania";
 })
 
-
-const australiaDeaths = australiaCountries.map(
+const oceaniaDeaths = oceaniaCountries.map(
   (country) => data[country]["All"]["deaths"]
 );
 
-
-
-const australiaConfirmed = australiaCountries.map(
-(country) => data[country]["All"]["confirmed"]
+const oceaniaConfirmed = oceaniaCountries.map(
+  (country) => data[country]["All"]["confirmed"]
 );
-
  
-  const AustraliaCountries = Object.keys(data).filter(function(countryName) {
+  const OceaniaCountries = Object.keys(data).filter(function(countryName) {
 
 const reducer = (accumulator, curr) => accumulator + curr;
-const australiaConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
-const australiaLifeReducer = (accumulator3, curr) => accumulator3 + curr;
-//const australiaDeathCount = australiaDeaths.reduce(reducer);
-//const australiaConfirmedCount = australiaConfirmed.reduce(reducer);
-//const asianLifeCount =asianLife_expectancy.reduce(asianLifeReducer));
+const oceaniaConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+const oceaniaLifeReducer = (accumulator3, curr) => accumulator3 + curr;
+const oceaniaDeathCount = oceaniaDeaths.reduce(reducer);
+const oceaniaConfirmedCount = oceaniaConfirmed.reduce(reducer);
+//const oceaniaLifeCount =oceaniaLife_expectancy.reduce(asianLifeReducer));
 
-console.log("Deaths: "+"australiaDeathCount"+" "+
-          "Confirmed: "+"australiaConfirmedCount"+  
+console.log("Deaths: "+oceaniaDeathCount+" "+
+          "Confirmed: "+oceaniaConfirmedCount+  
           " Life Expectancy: "+"australiaLife_expectancy");
 
 });
@@ -193,7 +189,7 @@ console.log("Deaths: "+"australiaDeathCount"+" "+
 /**************saLife_expectancy/12 ***************/
 ///////////////////************************************* */
 
-    console.log(australiaCountries);
+    console.log(oceaniaCountries);
     
 
     
