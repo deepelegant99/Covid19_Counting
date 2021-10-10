@@ -15,34 +15,27 @@ const ContinentPage = ({ data }) => {
   );
 
 
+  
+const asianConfirmed = asianCountries.map(
+  (country) => data[country]["All"]["confirmed"]
+);
+
    
     const AsianCountries = Object.keys(data).filter(function(countryName) {
 
-  const reducer = (accumulator, curr) => accumulator + curr;
-  console.log(asianDeaths.reduce(reducer));
+  const Reducer = (accumulator, curr) => accumulator + curr;
+  const confirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+  const asianLifeReducer = (accumulator3, curr) => accumulator3 + curr;
+  const asianDeathCount = asianDeaths.reduce(Reducer);
+  const asianConfirmedCount = asianConfirmed.reduce(confirmedReducer);
+//const asianLifeCount =asianLife_expectancy.reduce(asianLifeReducer));
 
-    });
-  
-    let continentResult=0;
+console.log("Deaths: "+asianDeathCount+" "+
+            "Confirmed: "+asianConfirmedCount+  
+            " Life Expectancy: "+"europeLife_expectancy");
 
-    /*const continentDeaths = Object.keys(newList).map(function(countryDeaths){
+  });
 
-      return continentResult=continentResult+newList[countryDeaths]['deaths'];
-    })
-
-    let asiaConfirmed=0;
-
-    const asiaResult2 = Object.keys(newList).map(function(countryConfirmed){
-
-      return asiaConfirmed=asiaConfirmed+newList[countryConfirmed]['confirmed'];
-    })
-
-    let asiaLife_expectancy = 0;
-
-    const asiaResult3 = Object.keys(newList).map(function(countrylife){
-
-      return asiaLife_expectancy=asiaLife_expectancy+parseFloat(newList[countrylife]['life_expectancy']);
-    })
 
 /////////////**************Europe****************************** */
 const europeCountries = Object.keys(data).filter(function(countryName) {
@@ -54,12 +47,39 @@ const europeDeaths = europeCountries.map(
   (country) => data[country]["All"]["deaths"]
 );
 
+const europeConfirmed = europeCountries.map(
+  (country) => data[country]["All"]["confirmed"]
+);
 
+/*const europeLife_expectancy = europeCountries.map(
+  (country) => parseFloat(data[country]["All"]["life_expectancy"])
+);*/
  
+
+
+/****************************************** */
+const europeList = europeCountries.map((europeCountries) => data[europeCountries]['All'])
+
+let europeLife_expectancy = 0;
+
+const europeResult3 = Object.keys(europeList).map(function(countrylife){
+
+return europeLife_expectancy=europeLife_expectancy+parseFloat(europeList[countrylife]['life_expectancy']);
+})
+/****************************************** */
   const EuropeCountries = Object.keys(data).filter(function(countryName) {
 
 const europeReducer = (accumulator, curr) => accumulator + curr;
-console.log(europeDeaths.reduce(europeReducer));
+const europeConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+const europeLifeReducer = (accumulator3, curr) => accumulator3 + curr;
+const europeDeathCount = europeDeaths.reduce(europeReducer);
+const europeConfirmedCount = europeConfirmed.reduce(europeConfirmedReducer);
+//const europeLifeCount =europeLife_expectancy.reduce(europeLifeReducer));
+
+
+console.log("Deaths: "+europeDeathCount+" "+
+            "Confirmed: "+europeConfirmedCount+  
+            " Life Expectancy: "+europeLife_expectancy);
 
   });
 
@@ -77,14 +97,24 @@ const naDeaths = naCountries.map(
   (country) => data[country]["All"]["deaths"]
 );
 
+const naConfirmed = naCountries.map(
+  (country) => data[country]["All"]["confirmed"]
+);
+
 
  
   const NACountries = Object.keys(data).filter(function(countryName) {
 
 const naReducer = (accumulator, curr) => accumulator + curr;
-console.log(naDeaths.reduce(naReducer));
+const naConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+const naDeathCount = naDeaths.reduce(naReducer);
+const naConfirmedCount = naConfirmed.reduce(naConfirmedReducer)
+console.log("Deaths: "+naDeathCount+" "+
+            "Confirmed: "+naConfirmedCount+  
+            " Life Expectancy: "+"naLife_expectancy");
 
   });
+
 
 
 /**************naLife_expectancy/23 ***************/
@@ -102,14 +132,25 @@ const saDeaths = saCountries.map(
   (country) => data[country]["All"]["deaths"]
 );
 
+const saConfirmed = naCountries.map(
+  (country) => data[country]["All"]["confirmed"]
+);
+
+
 
  
   const SACountries = Object.keys(data).filter(function(countryName) {
 
 const saReducer = (accumulator, curr) => accumulator + curr;
-console.log(saDeaths.reduce(saReducer));
+const saConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+const saDeathCount = saDeaths.reduce(saReducer);
+const saConfirmedCount = saConfirmed.reduce(saConfirmedReducer)
+console.log("Deaths: "+saDeathCount+" "+
+            "Confirmed: "+saConfirmedCount+  
+            " Life Expectancy: "+"saLife_expectancy");
 
   });
+
 
 /**************saLife_expectancy/12 ***************/
 ///////////////////************************************* */
@@ -123,30 +164,31 @@ const australiaCountries = Object.keys(data).filter(function(countryName) {
 })
 
 
-/* This Works*/   
+const australiaDeaths = australiaCountries.map(
+  (country) => data[country]["All"]["deaths"]
+);
 
-const newList5 = australiaCountries.map((australiaCountries) => data[australiaCountries]['All'])
 
-let australiaDeaths=0;
 
-const australiaResult = Object.keys(newList5).map(function(countryDeaths){
+const australiaConfirmed = australiaCountries.map(
+(country) => data[country]["All"]["confirmed"]
+);
 
-return australiaDeaths=australiaDeaths+newList5[countryDeaths]['deaths'];
-})
+ 
+  const AustraliaCountries = Object.keys(data).filter(function(countryName) {
 
-let australiaConfirmed=0;
+const reducer = (accumulator, curr) => accumulator + curr;
+const australiaConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
+const australiaLifeReducer = (accumulator3, curr) => accumulator3 + curr;
+//const australiaDeathCount = australiaDeaths.reduce(reducer);
+//const australiaConfirmedCount = australiaConfirmed.reduce(reducer);
+//const asianLifeCount =asianLife_expectancy.reduce(asianLifeReducer));
 
-const australiaResult2 = Object.keys(newList5).map(function(countryConfirmed){
+console.log("Deaths: "+"australiaDeathCount"+" "+
+          "Confirmed: "+"australiaConfirmedCount"+  
+          " Life Expectancy: "+"australiaLife_expectancy");
 
-return australiaConfirmed=australiaConfirmed+newList5[countryConfirmed]['confirmed'];
-})
-
-let australiaLife_expectancy = 0;
-
-const australiaResult3 = Object.keys(newList5).map(function(countrylife){
-
-return australiaLife_expectancy=australiaLife_expectancy+parseFloat(newList5[countrylife]['life_expectancy']);
-})
+});
 
 /**************saLife_expectancy/12 ***************/
 ///////////////////************************************* */
