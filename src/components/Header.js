@@ -25,7 +25,7 @@ const Header = () => {
       <ul>
         <li>
           <Link style={{ textDecoration: "none" }} to="/">
-            Main
+            Home
           </Link>
         </li>
         <li>

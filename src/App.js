@@ -3,8 +3,6 @@ import Fetchdata from "./components/Fetchdata";
 import { useState } from "react";
 import CountryPage from "./Page/CountryPage";
 import ContinentPage from "./Page/ContinentPage";
-import GenericCountry from "./Page/GenericCountry";
-import LocationPage from "./Page/LocationPage";
 import MainPage from "./Page/MainPage";
 import Header from './components/Header'
 import './App.css'
