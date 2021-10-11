@@ -20,6 +20,7 @@ const asianConfirmed = asianCountries.map(
   (country) => data[country]["All"]["confirmed"]
 );
 
+const asianDictionary={};
    
     const AsianCountries = Object.keys(data).filter(function(countryName) {
 
@@ -30,11 +31,19 @@ const asianConfirmed = asianCountries.map(
   const asianConfirmedCount = asianConfirmed.reduce(confirmedReducer);
 //const asianLifeCount =asianLife_expectancy.reduce(asianLifeReducer));
 
-console.log("Deaths: "+asianDeathCount+" "+
-            "Confirmed: "+asianConfirmedCount+  
-            " Life Expectancy: "+"europeLife_expectancy");
+  asianDictionary["continent"]="Asia";
+  const key1 = asianDictionary["continent"];
+  asianDictionary["deaths"]=asianDeathCount;
+  const key2 = asianDictionary["deaths"];
+  asianDictionary["confirmed"]=asianConfirmedCount;
+  const key3 = asianDictionary["confirmed"];
+  
+  
 
   });
+  
+console.log(asianDictionary);
+
 
 
 /////////////**************Europe****************************** */
@@ -60,6 +69,8 @@ const europeConfirmed = europeCountries.map(
 /****************************************** */
 const europeList = europeCountries.map((europeCountries) => data[europeCountries]['All'])
 
+const europeDictionary={};
+
 let europeLife_expectancy = 0;
 
 const europeResult3 = Object.keys(europeList).map(function(countrylife){
@@ -76,13 +87,18 @@ const europeDeathCount = europeDeaths.reduce(europeReducer);
 const europeConfirmedCount = europeConfirmed.reduce(europeConfirmedReducer);
 //const europeLifeCount =europeLife_expectancy.reduce(europeLifeReducer));
 
+europeDictionary["continent"]="Europe";
+  const ekey1 = europeDictionary["continent"];
+  europeDictionary["deaths"]=europeDeathCount;
+  const ekey2 = europeDictionary["deaths"];
+  europeDictionary["confirmed"]=europeConfirmedCount;
+  const ekey3 = europeDictionary["confirmed"];
+  
 
-console.log("Deaths: "+europeDeathCount+" "+
-            "Confirmed: "+europeConfirmedCount+  
-            " Life Expectancy: "+europeLife_expectancy);
 
   });
 
+  console.log(europeDictionary);
 
 
 ///////////////////************************************* */
@@ -101,7 +117,7 @@ const naConfirmed = naCountries.map(
   (country) => data[country]["All"]["confirmed"]
 );
 
-
+const naDictionary={};
  
   const NACountries = Object.keys(data).filter(function(countryName) {
 
@@ -109,12 +125,18 @@ const naReducer = (accumulator, curr) => accumulator + curr;
 const naConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
 const naDeathCount = naDeaths.reduce(naReducer);
 const naConfirmedCount = naConfirmed.reduce(naConfirmedReducer)
-console.log("Deaths: "+naDeathCount+" "+
-            "Confirmed: "+naConfirmedCount+  
-            " Life Expectancy: "+"naLife_expectancy");
+
+naDictionary["continent"]="North America";
+  const nakey1 = naDictionary["continent"];
+  naDictionary["deaths"]=naDeathCount;
+  const nakey2 = naDictionary["deaths"];
+  naDictionary["confirmed"]=naConfirmedCount;
+  const nakey3 = naDictionary["confirmed"];
+  
 
   });
 
+  console.log(naDictionary);
 
 
 /**************naLife_expectancy/23 ***************/
@@ -137,7 +159,7 @@ const saConfirmed = naCountries.map(
 );
 
 
-
+const saDictionary={};
  
   const SACountries = Object.keys(data).filter(function(countryName) {
 
@@ -145,11 +167,19 @@ const saReducer = (accumulator, curr) => accumulator + curr;
 const saConfirmedReducer = (accumulator2, curr) => accumulator2 + curr; 
 const saDeathCount = saDeaths.reduce(saReducer);
 const saConfirmedCount = saConfirmed.reduce(saConfirmedReducer)
-console.log("Deaths: "+saDeathCount+" "+
-            "Confirmed: "+saConfirmedCount+  
-            " Life Expectancy: "+"saLife_expectancy");
+
+saDictionary["continent"]="South America";
+  const sakey1 = saDictionary["continent"];
+  saDictionary["deaths"]=saDeathCount;
+  const sakey2 = saDictionary["deaths"];
+  saDictionary["confirmed"]=saConfirmedCount;
+  const sakey3 = saDictionary["confirmed"];
+  
 
   });
+
+
+  console.log(saDictionary);
 
 
 /**************saLife_expectancy/12 ***************/
@@ -170,6 +200,8 @@ const oceaniaDeaths = oceaniaCountries.map(
 const oceaniaConfirmed = oceaniaCountries.map(
   (country) => data[country]["All"]["confirmed"]
 );
+
+const oceaniaDictionary = {};
  
   const OceaniaCountries = Object.keys(data).filter(function(countryName) {
 
@@ -180,19 +212,33 @@ const oceaniaDeathCount = oceaniaDeaths.reduce(reducer);
 const oceaniaConfirmedCount = oceaniaConfirmed.reduce(reducer);
 //const oceaniaLifeCount =oceaniaLife_expectancy.reduce(asianLifeReducer));
 
-console.log("Deaths: "+oceaniaDeathCount+" "+
-          "Confirmed: "+oceaniaConfirmedCount+  
-          " Life Expectancy: "+"australiaLife_expectancy");
+oceaniaDictionary["continent"]="Oceania";
+  const okey1 = oceaniaDictionary["continent"];
+  oceaniaDictionary["deaths"]=oceaniaDeathCount;
+  const okey2 = oceaniaDictionary["deaths"];
+  saDictionary["confirmed"]=oceaniaConfirmedCount;
+  const okey3 = oceaniaDictionary["confirmed"];
+  
+
 
 });
+
+
+console.log(oceaniaDictionary);
 
 /**************saLife_expectancy/12 ***************/
 ///////////////////************************************* */
 
-    console.log(oceaniaCountries);
-    
+const continentDictionary={};
 
-    
+continentDictionary[0]=asianDictionary;
+continentDictionary[1]=europeDictionary;
+continentDictionary[2]=naDictionary;
+continentDictionary[3]=saDictionary;
+continentDictionary[4]=oceaniaDictionary;
+
+console.log(continentDictionary);
+
 return(
       
       <DisplayItem data={data} />
@@ -204,7 +250,5 @@ return(
 
 }
 
-  /*return <DisplayItem data={data} />;
-};*/
 
 export default ContinentPage;
