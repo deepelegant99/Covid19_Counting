@@ -196,6 +196,7 @@ saDictionary["continent"]="South America";
   const sakey2 = saDictionary["deaths"];
   saDictionary["confirmed"]=saConfirmedCount;
   const sakey3 = saDictionary["confirmed"];
+  }
   
   /////////////**************South America****************************** */
   const saCountries = Object.keys(data).filter(function (countryName) {
@@ -258,23 +259,10 @@ saDictionary["continent"]="South America";
     
   });
 
-  /**************saLife_expectancy/12 ***************/
-  ///////////////////************************************* */
-
-
-/**************saLife_expectancy/12 ***************/
-///////////////////************************************* */
-
-//const continentDictionary={};
 const continentDictionary=[asianDictionary, europeDictionary, naDictionary,
   saDictionary, oceaniaDictionary];
 
-/*continentDictionary[0]=asianDictionary;
-continentDictionary[1]=europeDictionary;
-continentDictionary[2]=naDictionary;
-continentDictionary[3]=saDictionary;
-continentDictionary[4]=oceaniaDictionary;
-*/
+
 
 console.log(continentDictionary);
 
@@ -283,7 +271,7 @@ return(
       <DisplayContinent data={continentDictionary} />  
       </>
 
-};
+)};
 
 
 
