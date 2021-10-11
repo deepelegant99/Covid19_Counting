@@ -21,20 +21,19 @@ const useStyles = makeStyles({
 const ContinentCard = ({ continent }) => {
   
   const classes = useStyles();
-
+console.log(continent);
   return (
     <Card elevation={3}>
       <CardHeader
         className={classes.headerStyle}
         title={`Death From Covid 19: ` + continent.deaths}
-        subheader={continent.country}
+        subheader={continent.continent}
       />
       <CardContent className={classes.contentStyle}>
         <Typography variant="body1">
-          Life Expectancy is {continent.life_expectancy} <br /> <br />
           Confirmed Cases is {continent.confirmed}
         </Typography>
-        <Button>States</Button>
+        <Button>Continent</Button>
       </CardContent>
     </Card>
   );

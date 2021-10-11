@@ -1,4 +1,5 @@
 import DisplayItem from "../components/DisplayItems";
+import DisplayContinent from "../components/DisplayContinent";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -229,19 +230,22 @@ console.log(oceaniaDictionary);
 /**************saLife_expectancy/12 ***************/
 ///////////////////************************************* */
 
-const continentDictionary={};
+//const continentDictionary={};
+const continentDictionary=[asianDictionary, europeDictionary, naDictionary,
+  saDictionary, oceaniaDictionary];
 
-continentDictionary[0]=asianDictionary;
+/*continentDictionary[0]=asianDictionary;
 continentDictionary[1]=europeDictionary;
 continentDictionary[2]=naDictionary;
 continentDictionary[3]=saDictionary;
 continentDictionary[4]=oceaniaDictionary;
+*/
 
 console.log(continentDictionary);
 
 return(
       
-      <DisplayItem data={data} />
+      <DisplayContinent data={continentDictionary} />
   
         )
 
