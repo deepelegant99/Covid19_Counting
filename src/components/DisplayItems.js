@@ -2,7 +2,6 @@ import { Container, Grid } from "@material-ui/core";
 import CountryCard from "./CountryCard";
 
 const DisplayData = ({ data }) => {
-   console.log(data);
 
   return (
     <Container maxWidth="lg">
