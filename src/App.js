@@ -29,12 +29,6 @@ function App() {
           <Route path="/ContinentPage">
             <ContinentPage data={data}/>
           </Route>
-          <Route path="/LocationPage">
-            <LocationPage data={data}/>
-          </Route>
-          <Route path="/GenericCountry">
-            <GenericCountry />
-          </Route>
         </Switch>
       </Router>
     </>

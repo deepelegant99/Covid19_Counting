@@ -38,16 +38,6 @@ const Header = () => {
             Continent
           </Link>
         </li>
-        <li>
-          <Link style={{ textDecoration: "none" }} to="/LocationPage">
-            Location
-          </Link>
-        </li>
-        <li>
-          <Link style={{ textDecoration: "none" }} to="/GenericCountry">
-            Generic Country
-          </Link>
-        </li>
       </ul>
     </div>
   );
